@@ -24,10 +24,31 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//button[@class='orb-search__button']")
     private WebElement searchButton;
 
+    @FindBy(xpath = "//section[@class='module module--header']")
+    private WebElement header;
+
+    @FindBy(xpath = "//div[@class='orb-footer']")
+    private WebElement footer;
+
+    @FindBy(xpath = "//span[@id='idcta-username']")
+    private WebElement signInButton;
+
+    @FindBy(xpath = "")
+    private WebElement signInPage;
+
+    @FindBy(xpath = "")
+    private WebElement emailField;
+
+    @FindBy(xpath = "")
+    private WebElement passwordField;
+
+
 
     public HomePage(WebDriver driver) {
         super(driver);
     }
+
+    public void openHomePage(String url) {driver.get(url);}
 
     public void searchByKeyword(final String keyword) {
         searchInput.sendKeys(keyword);
@@ -46,5 +67,32 @@ public class HomePage extends BasePage {
         return nameFirstNews.getText();
     }
 
+    public boolean isHeaderVisible() {
+        return header.isDisplayed();
+    }
+
+    public boolean isFooterVisible() {
+        return footer.isDisplayed();
+    }
+
+    public boolean isSignInButtonVisible() {
+        return signInButton.isDisplayed();
+    }
+
+    public void clickHelloSignInButton() {
+        signInButton.click();
+    }
+
+    public WebElement getSignInPage() {
+        return signInPage;
+    }
+
+    public boolean isEmailFieldVisible() {
+        return emailField.isDisplayed();
+    }
+
+    public boolean isPasswordFieldVisible() {
+        return passwordField.isDisplayed();
+    }
 
 }
