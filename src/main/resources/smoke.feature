@@ -43,7 +43,7 @@ Feature: Smoke
       | https://www.bbc.com  |
 
 
-  Scenario Outline: Check article against the keyword from url
+  Scenario Outline: Check answer when user enters data
     Given User opens '<homePage>' page
     And User opens news page
     When User checks footer visibility
